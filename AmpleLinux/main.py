@@ -60,6 +60,21 @@ def _detect_linux_dark_mode():
                 for line in f:
                     if 'ColorScheme' in line and 'Dark' in line:
                         return True
+                    else:
+                        return False
+    except Exception:
+        pass
+    # Try COSMIC
+    try:
+        cosmic_isdark = os.path.expanduser('~/.config/cosmic/com.system76.CosmicTheme.Mode/v1/is_dark')
+        if os.path.exists(cosmic_isdark):
+            with open(cosmic_isdark, 'r') as f:
+                for line in f:
+                    if 'true' in line.lower():
+                        return True
+                    else:
+                        return False
+
     except Exception:
         pass
     return None  # Unknown, use Qt palette fallback
