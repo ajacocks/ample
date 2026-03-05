@@ -30,6 +30,18 @@ def _xdg_open(path):
 
 def _detect_linux_dark_mode():
     """Detect dark mode on Linux desktops (GNOME, KDE, etc.)."""
+    # Try COSMIC
+    try:
+        cosmic_isdark = os.path.expanduser('~/.config/cosmic/com.system76.CosmicTheme.Mode/v1/is_dark')
+        if os.path.exists(cosmic_isdark):
+            with open(cosmic_isdark, 'r') as f:
+                for line in f:
+                    if 'true' in line.lower():
+                        return True
+                    else:
+                        return False
+    except Exception:
+        pass
     # Try GNOME / GTK color-scheme (GNOME 42+)
     try:
         result = subprocess.run(
@@ -66,19 +78,7 @@ def _detect_linux_dark_mode():
                         return False
     except Exception:
         pass
-    # Try COSMIC
-    try:
-        cosmic_isdark = os.path.expanduser('~/.config/cosmic/com.system76.CosmicTheme.Mode/v1/is_dark')
-        if os.path.exists(cosmic_isdark):
-            with open(cosmic_isdark, 'r') as f:
-                for line in f:
-                    if 'true' in line.lower():
-                        return True
-                    else:
-                        return False
 
-    except Exception:
-        pass
     return None  # Unknown, use Qt palette fallback
 
 class VgmPostProcessWorker(QThread):
