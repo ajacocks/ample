@@ -50,6 +50,8 @@ def _detect_linux_dark_mode():
         )
         if 'dark' in result.stdout.lower():
             return True
+        else:
+            return False
     except Exception:
         pass
     # Try KDE
