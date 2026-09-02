@@ -171,6 +171,9 @@ SLOTS = (
 
 	# lisa
 	"pp",
+
+	# sgi
+	"gio64_gfx",
 )
 
 SLOT_NAMES = {
@@ -288,6 +291,9 @@ SLOT_NAMES = {
 
 	# lisa
 	"pp":         "Parallel",
+
+	# sgi
+	"gio64_gfx":      "GIO64 Graphics",
 
 }
 

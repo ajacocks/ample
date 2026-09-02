@@ -434,13 +434,13 @@
         </dict>
         <dict>
           <key>description</key>
-          <string>Laser 128ex (version 4.5)</string>
+          <string>Laser 128EX</string>
           <key>value</key>
           <string>las128ex</string>
         </dict>
         <dict>
           <key>description</key>
-          <string>Laser 128ex2 (version 6.1)</string>
+          <string>Laser 128EX/2</string>
           <key>value</key>
           <string>las128e2</string>
         </dict>
@@ -877,6 +877,37 @@
           <string>Macintosh PowerBook Duo 280c</string>
           <key>value</key>
           <string>macpd280c</string>
+        </dict>
+      </array>
+    </dict>
+    <dict>
+      <key>description</key>
+      <string>Lisa</string>
+      <key>children</key>
+      <array>
+        <dict>
+          <key>description</key>
+          <string>Lisa</string>
+          <key>value</key>
+          <string>lisa</string>
+        </dict>
+        <dict>
+          <key>description</key>
+          <string>Lisa2</string>
+          <key>value</key>
+          <string>lisa2</string>
+        </dict>
+        <dict>
+          <key>description</key>
+          <string>Lisa2/10</string>
+          <key>value</key>
+          <string>lisa210</string>
+        </dict>
+        <dict>
+          <key>description</key>
+          <string>Macintosh XL</string>
+          <key>value</key>
+          <string>macxl</string>
         </dict>
       </array>
     </dict>
